@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.staxine.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>STAXINE</name>
+    <description>AI Financial Ecosystem</description>
+    <author>STAXINE</author>
+    <content src="index.html" />
+    
+    <!-- Allow localhost -->
+    <allow-navigation href="http://localhost:8080/*" />
+    <allow-navigation href="http://127.0.0.1:8080/*" />
+    
+    <platform name="android">
+        <!-- Inject Permissions -->
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        </config-file>
+        
+        <!-- Allow HTTP (Cleartext) -->
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+        
+        <preference name="android-minSdkVersion" value="24" />
+        <preference name="android-targetSdkVersion" value="34" />
+        <preference name="Fullscreen" value="true" />
+    </platform>
+</widget>
