@@ -5,18 +5,13 @@
     <author>STAXINE</author>
     <content src="index.html" />
     
-    <!-- Allow localhost -->
-    <allow-navigation href="http://localhost:8080/*" />
-    <allow-navigation href="http://127.0.0.1:8080/*" />
+    <!-- Allow the app to talk to the local Python server -->
+    <allow-navigation href="http://localhost:8000/*" />
+    <allow-navigation href="http://127.0.0.1:8000/*" />
+    <allow-intent href="http://*/*" />
     
     <platform name="android">
-        <!-- Inject Permissions -->
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.RECORD_AUDIO" />
-        </config-file>
-        
-        <!-- Allow HTTP (Cleartext) -->
+        <!-- Allow HTTP (cleartext) traffic -->
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
         </edit-config>
