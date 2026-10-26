@@ -20,8 +20,6 @@
     "platforms": [
       "android"
     ],
-    "plugins": {
-      "com.napolitano.cordova.plugin.intent": {}
-    }
+    "plugins": {}
   }
 }
